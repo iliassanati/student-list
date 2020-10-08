@@ -5,9 +5,6 @@
      - name: clone the git repo
        shell: git clone https://github.com/iliassanati/student-list.git
 
-#      - name: Go to the placement of the dokcer-compose.yml
-#        shell: cd student-list
- 
      - name: Execute the docker-compose file
        shell: cd student-list docker-compose up
   
