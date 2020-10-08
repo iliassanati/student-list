@@ -9,5 +9,5 @@
 #        shell: cd student-list
  
      - name: Execute the docker-compose file
-       shell: cd /student-list pwd docker-compose up
+       shell: cd student-list pwd docker-compose up
   
