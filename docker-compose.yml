@@ -18,7 +18,7 @@ services:
 
   # API
   api:
-    image: iliassanati/simple_api
+    image: registry.local.com:5000/iliassanati/simple_api:v1 
     volumes:
       - ./simple_api/student_age.json:/data/student_age.json
     ports:
