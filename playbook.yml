@@ -20,10 +20,11 @@
     - name: Deploy api
       docker_container:
         name: api
-        image: registry.local.com:5000/iliassanati/simple_api:v1
+        hostname: api
+        image: registry.local.com:5000/simple_api
         state: started
         volumes:
-          - ./simple_api/student_age.json:/data/student_age.json
+          - '{{home/iliassanati}}/simple_api/student_age.json:/data/student_age.json'
         ports:
           - 5000:5000
         networks:
@@ -39,7 +40,7 @@
         image: php:7.2-apache
         state: started
         volumes:
-          - ./website:/var/www/html
+          - '{{home/iliassanati}}/student-list/website:/var/www/html'
         env:
           USERNAME: 'toto'
           PASSWORD: 'python'
