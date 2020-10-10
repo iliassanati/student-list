@@ -2,7 +2,7 @@
 - hosts: deploy_servers
   become: true
   tasks:
-#     - name: Remove the old folfer
+#     - name: Remove the old cloned folder
 #       shell: sudo rm -r student-list/ simple_api/
 
     - name: clone the git repo
