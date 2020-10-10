@@ -20,6 +20,8 @@
           - ./simple_api/student_age.json:/data/student_age.json
         ports:
           - 5000:5000
+        networks:
+          - appnetwork
 
     # deploy frontend
 
@@ -27,6 +29,8 @@
       docker_container:
         name: website
         image: php:7.2-apache
+        depends_on:
+          - api
         volumes:
           - ./website:/var/www/html
         env:
@@ -34,3 +38,8 @@
           PASSWORD: 'python'
         ports:
           - '80:80'
+        networks:
+          - appnetwork
+  networks:
+    appnetwork:
+
