@@ -19,7 +19,7 @@ services:
   # API
   api:
     hostname: api
-    image: registry.local.com:5000/simple_api:v1 
+    image: registry.local.com:5000/simple_api
     volumes:
       - ./simple_api/student_age.json:/data/student_age.json
     ports:
