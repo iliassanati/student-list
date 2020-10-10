@@ -2,8 +2,8 @@
 - hosts: deploy_servers
   become: true
   tasks:
-    - name: Remove the old folfer
-      shell: sudo rm -r student-list/ simple_api/
+#     - name: Remove the old folfer
+#       shell: sudo rm -r student-list/ simple_api/
 
     - name: clone the git repo
       shell: git clone https://github.com/iliassanati/student-list.git
