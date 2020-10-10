@@ -32,8 +32,6 @@
       docker_container:
         name: website
         image: php:7.2-apache
-        depends_on:
-          - api
         volumes:
           - ./website:/var/www/html
         env:
