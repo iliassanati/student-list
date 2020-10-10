@@ -1,7 +1,7 @@
 ---
-- hosts: deploy_servers
-  become: true
-  tasks:
+ - hosts: deploy_servers
+   become: true
+   tasks:
     - name: clone the git repo
       shell: git clone https://github.com/iliassanati/student-list.git
 
@@ -40,6 +40,7 @@
           - '80:80'
         networks:
           - appnetwork
-  networks:
-    appnetwork:
+   networks:
+     appnetwork:
+
 
