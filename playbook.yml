@@ -12,6 +12,8 @@
     - name: crete docker network to interconnect containers
       docker_network:
         name: student-list_network
+      tags:
+        - deploy
 
     # deploy API
 
@@ -19,12 +21,15 @@
       docker_container:
         name: api
         image: registry.local.com:5000/iliassanati/simple_api:v1
+        state: started
         volumes:
           - ./simple_api/student_age.json:/data/student_age.json
         ports:
           - 5000:5000
         networks:
           - name: student-list_network
+      tags:
+        - deploy
 
     # deploy frontend
 
@@ -32,6 +37,7 @@
       docker_container:
         name: website
         image: php:7.2-apache
+        state: started
         volumes:
           - ./website:/var/www/html
         env:
@@ -41,3 +47,5 @@
           - '80:80'
         networks:
           - name: student-list_network
+      tags:
+        - deploy
