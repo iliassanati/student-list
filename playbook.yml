@@ -2,9 +2,6 @@
 - hosts: deploy_servers
   become: true
   tasks:
-#     - name: Remove the old cloned folder...
-#       shell: sudo rm -r student-list/ simple_api/
-
     - name: clone the git repo
       shell: git clone https://github.com/iliassanati/student-list.git
 
@@ -24,7 +21,7 @@
       docker_container:
         name: api
         hostname: api
-        image: registry.local.com:8080/simple_api
+        image: registry.local.com:5000/simple_api
         state: started
         volumes:
           - /home/iliassanati/student-list/simple_api/student_age.json:/data/student_age.json
